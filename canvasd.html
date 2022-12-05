@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    </style>
+  </head>
+  <body>
+    <canvas id="mycanvas" width="600" height="600"style ='border:1px solid black;' onmouseover="ove()"></canvas>
+
+    <script>
+
+    var canvas = document.getElementById('mycanvas');
+    var ctx = mycanvas.getContext('2d');
+
+var obj = {
+  block: function(){
+
+    ctx.fillStyle ="rgb(255,255,0)";
+    ctx.fillRect(250,250,100,100);
+    ctx.fill();
+  }
+};
+
+    obj.block();
+
+    var obj2 ={
+    button:  function() {
+        ctx.fillStyle ="rgb(0,255,255)";
+        ctx.fillRect(250,250,100,100);
+        ctx.fill();
+      }
+    }
+
+    var obj3 = {
+      button2: function() {
+        ctx.fillStyle ="rgb(255,0,255)";
+        ctx.fillRect(250,250,100,100);
+        ctx.fill();
+      }
+    }
+
+
+    window.addEventListener('click', (event) => {
+  console.log(`pageX : ${event.pageX} /// pageY : ${event.pageY}`);
+  console.log(`clientX : ${event.clientX} /// clientY : ${event.clientY}`);
+    if (event.clientX>250&&event.clientX<350&&event.clientY>250&&event.clientY<350) {
+      obj2.button();
+
+    }
+})
+
+
+  canvas.onmousemove = function(event){
+
+      const x = event.clientX-ctx.canvas.offsetLeft;
+      const y = event.clientY-ctx.canvas.offsetTop;
+    console.log(`clientX : ${x} /// clientY : ${y}`);
+
+        if (x>250&&x<350&&y>250&&y<350) {
+           obj3.button2();
+         }
+}
+//여러 가지 시도를 해봤지만 마우스오버,아웃은 못했습니다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+  </body>
+</html>
