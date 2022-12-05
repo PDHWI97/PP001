@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="sstyle.css">
+
+  </head>
+  <body>
+    <div class='rap'>
+      <input type="month" id="info" min="2000-01" max="2030-12">
+      <input type="button" value="Greeting" onclick="sayHello()">
+
+        <div class="header">
+           <div class="btn prevDay"></div>
+          <h2 class='dateTitle'></h2>
+          <div class="btn nextDay"></div>
+        </div>
+
+        <div class="grid dateHead">
+          <div>일</div>
+          <div>월</div>
+          <div>화</div>
+          <div>수</div>
+          <div>목</div>
+          <div>금</div>
+          <div>토</div>
+        </div>
+
+        <div class="grid dateBoard"></div>
+      </div>
+      <script src="dal.js"></script>
+
+  </body>
+</html>
