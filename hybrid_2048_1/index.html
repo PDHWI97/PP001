@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <title>2048을 만들어보자</title>
+    <link rel="stylesheet" href="14w.css" type="text/css">
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <div id="app">
+        <div class="backblock" v-for="index in divList"></div>
+    </div>
+
+    <script type="text/javascript" src="14w.js"></script>
+
+    <script type="text/javascript">
+        const{createApp} = Vue;
+        createApp({
+            data(){
+                return{
+                    divList: 16
+                }
+            },
+            mounted(){
+                console.log("app 마운트 성공");
+            }
+        }).mount("#app");
+
+    </script>
+</body>
+</html>
