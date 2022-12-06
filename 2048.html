@@ -2,43 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./2048.css">
+    <title>2048</title>
 </head>
 <body>
-    <style>
-        #app{
-            width: 582px;
-            height: 582px;
-            background-color: beige;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-            grid-gap: 10px;
-            padding: 10px;
-        }
-        .bg_block{
-            background-color: burlywood;
-        }
-    </style>
-    <div id="app">
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
-        <div class="bg_block"></div>
+    <div class="boardLine" id="firstBoardLine">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
     </div>
+    <div class="boardLine" id="secondBoardLine">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <div class="boardLine" id="thirdBoardLine">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <div class="boardLine" id="fourthBoardLine">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <h4 id = "score">Score :</h4>
+    <script src="./2048.js"></script>
+    
 </body>
 </html>
