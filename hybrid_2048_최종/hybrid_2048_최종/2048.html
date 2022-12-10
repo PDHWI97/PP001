@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./2048.css">
+    <title>2048</title>
+</head>
+<body>
+    <div class="buttons" id="firstButtonLine">
+        <div class="btnWrapper">
+            <div class="btn" id="btnStart" onclick="startBtnListener()"></div>
+        </div>
+        <div class="btnWrapper">
+            <div class="btn" id="btnReset" onclick="resetBtnListener()"></div>
+        </div>
+    </div>
+    <div class="gameArea" id="gameAreaLine">
+        <div class="boardLine" id="firstBoardLine">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="boardLine" id="secondBoardLine">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="boardLine" id="thirdBoardLine">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="boardLine" id="fourthBoardLine">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="gameover" id="gameoverLine">게임 종료</div>
+        <h4 id="score">Score :</h4>
+    </div>
+    
+    <script src="./2048.js"></script>
+
+    <script>
+        //box class game cell
+        class Box {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.dom = document.createElement("div");
+                this.dom.setAttribute("class", "box");
+            }
+
+            setAtteribute(key, value) {
+                this.dom.setAttribute(key, value);
+            }
+
+            getAttribute(key) {
+                return this.dom.getAttribute(key);
+            }
+        }
+
+        //div tile memory pool
+        class Pool {
+            constructor() {
+                this.pool = [];
+            }
+
+            //pool collect element
+            Destroy(element) {
+                this.pool.push(element);
+                element.setAtteribute("style", "display:none");
+            }
+
+            //pool spawn element (create or reuse)
+            Spawn(x, y) {
+                var element = this.pool.pop();
+                if (element == null) {
+                    element = new Box(x, y);
+                } else {
+                    element.x = x;
+                    element.y = y;
+                }
+                element.dom.setAttribute("style", "display:block");
+                return element;
+            }
+        }
+    </script>
+</body>
+</html>
